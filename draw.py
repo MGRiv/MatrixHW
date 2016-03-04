@@ -25,7 +25,13 @@ def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
     d2.append(z1)
     d2.append(1)
     matrix.append(d2)
-    
+
+m1 = []
+add_edge( m1 , 2 , 1 , 0 , 3 , 4 , 0)
+print_matrix(m1)
+scalar_mult(m1,3)
+print_matrix(m1)
+
 
 def add_point( matrix, x, y, z=0 ):
     d = []

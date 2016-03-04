@@ -58,7 +58,7 @@ def new_matrix(rows = 4, cols = 4):
 def print_matrix( matrix ):
     s = ""
     row = len(matrix[0])
-    col = len(matirx)
+    col = len(matrix)
     for r in range(row):
         for c in range(col):
             s += str(matrix[c][r]) + " "
@@ -75,16 +75,15 @@ def ident( matrix ):
     return matrix
 
 def scalar_mult( matrix, x ):
-    for c in range(4):
-        for r in range(4):
-            matrix[c][r] = matrix[c][r] * x
+    for c in range(len(matrix)):
+        for r in range(3):
+            matrix[c][r] *= x
     return matrix
 
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     l = len(m2)
-    c = 0
-    while(c < l):
+    for c in range(l):
         sx = sy = sz = sn = 0
         for r in range (4):
             sx += (m2[c][r] * m1[r][0])
@@ -95,4 +94,3 @@ def matrix_mult( m1, m2 ):
         m2[c][1] = sy
         m2[c][2] = sz
         m2[c][3] = sn
-        c += 1
